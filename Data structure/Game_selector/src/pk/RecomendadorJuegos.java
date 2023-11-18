@@ -1,9 +1,11 @@
+package pk;
+
 import java.util.Scanner;
 
 class NodoArbol {
     String pregunta;
-    NodoArbol si;
-    NodoArbol no;
+    NodoArbol2 si;
+    NodoArbol2 no;
 
     NodoArbol(String pregunta) {
         this.pregunta = pregunta;
@@ -16,29 +18,29 @@ public class RecomendadorJuegos {
 
     public static void main(String[] args) {
         // Construir el árbol de decisiones
-        NodoArbol raiz = construirArbol();
+        NodoArbol2 raiz = construirArbol();
 
         // Iniciar el juego recomendador
         recomendarJuego(raiz);
     }
 
-    private static NodoArbol construirArbol() {
-        NodoArbol raiz = new NodoArbol("¿Te gusta jugar al aire libre?");
-        raiz.si = new NodoArbol("¿Prefieres juegos con pelotas?");
-        raiz.no = new NodoArbol("¿Te gustan los juegos de mesa?");
-        raiz.si.si = new NodoArbol("Fútbol");
-        raiz.si.no = new NodoArbol("Baloncesto");
-        raiz.no.si = new NodoArbol("¿Prefieres juegos estratégicos?");
-        raiz.no.no = new NodoArbol("¿Te gustan los juegos de cartas?");
-        raiz.no.si.si = new NodoArbol("Ajedrez");
-        raiz.no.si.no = new NodoArbol("Damas");
-        raiz.no.no.si = new NodoArbol("Póker");
-        raiz.no.no.no = new NodoArbol("UNO");
+    private static NodoArbol2 construirArbol() {
+        NodoArbol2 raiz = new NodoArbol2("¿Te gusta jugar al aire libre?");
+        raiz.si = new NodoArbol2("¿Prefieres juegos con pelotas?");
+        raiz.no = new NodoArbol2("¿Te gustan los juegos de mesa?");
+        raiz.si.si = new NodoArbol2("Fútbol");
+        raiz.si.no = new NodoArbol2("Baloncesto");
+        raiz.no.si = new NodoArbol2("¿Prefieres juegos estratégicos?");
+        raiz.no.no = new NodoArbol2("¿Te gustan los juegos de cartas?");
+        raiz.no.si.si = new NodoArbol2("Ajedrez");
+        raiz.no.si.no = new NodoArbol2("Damas");
+        raiz.no.no.si = new NodoArbol2("Póker");
+        raiz.no.no.no = new NodoArbol2("UNO");
 
         return raiz;
     }
 
-    private static void recomendarJuego(NodoArbol nodo) {
+    private static void recomendarJuego(NodoArbol2 nodo) {
         Scanner scanner = new Scanner(System.in);
         System.out.println(nodo.pregunta + " (S/N)");
         String respuesta = scanner.nextLine().toUpperCase();
