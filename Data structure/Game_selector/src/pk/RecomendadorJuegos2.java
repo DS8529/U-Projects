@@ -98,12 +98,25 @@ public class RecomendadorJuegos2 extends JFrame {
 
         getContentPane().add(recomendacionPanel, "recomendacion");
 
-        mostrarPregunta();
+        mostrarSaludo();
+    }
+
+    private void mostrarSaludo() {
+        int opcionSaludo = JOptionPane.showOptionDialog(this,
+                "¡Bienvenido al Recomendador de Juegos!\n¿Quieres comenzar el test?",
+                "Inicio del Test de Juegos",
+                JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null,
+                new String[]{"Comenzar", "Cancelar"}, "Comenzar");
+
+        if (opcionSaludo == JOptionPane.YES_OPTION) {
+            mostrarPregunta();
+        } else {
+            System.exit(0);
+        }
     }
 
     private void mostrarPregunta() {
         if (nodoActual.si == null && nodoActual.no == null) {
-            // Llegó al final del árbol, mostrar mensaje y preguntar si desea reiniciar
             mostrarMensajeFinal();
         } else {
             preguntaLabel.setText(nodoActual.pregunta + " (S/N)");
@@ -113,53 +126,42 @@ public class RecomendadorJuegos2 extends JFrame {
     }
 
     private void mostrarRecomendacion(String recomendacion) {
-        // Mostrar ventana emergente con la recomendación final
         JOptionPane.showMessageDialog(this, recomendacion, "Recomendación Final", JOptionPane.INFORMATION_MESSAGE);
 
-        // Preguntar al usuario si quiere volver a hacer el test
         int opcion = JOptionPane.showOptionDialog(this, "¿Quieres volver a hacer el test?", "Test de Juegos",
                 JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null,
                 new String[]{"Sí", "No"}, "Sí");
 
         if (opcion == JOptionPane.YES_OPTION) {
-            // Reiniciar el test
             reiniciarTest();
         } else {
-            // Cerrar la aplicación
             System.exit(0);
         }
     }
 
     private void reiniciarTest() {
-        // Reiniciar el test según sea necesario
-        // Aquí puedes reiniciar las variables y nodos necesarios
-        // Por ejemplo, podrías reiniciar nodoActual a la raíz y llamar a mostrarPregunta() nuevamente.
         nodoActual = raiz;
         mostrarPregunta();
     }
 
     private void mostrarMensajeFinal() {
-        // Mensaje final al llegar al final del árbol con la recomendación final
         JOptionPane.showMessageDialog(this, "Llegaste al final del test. ¡Gracias por participar!\n" +
                 "Tu recomendación final es: " + nodoActual.pregunta, "Fin del Test", JOptionPane.INFORMATION_MESSAGE);
 
-        // Preguntar al usuario si quiere volver a hacer el test
         int opcion = JOptionPane.showOptionDialog(this, "¿Quieres volver a hacer el test?", "Test de Juegos",
                 JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null,
                 new String[]{"Sí", "No"}, "Sí");
 
         if (opcion == JOptionPane.YES_OPTION) {
-            // Reiniciar el test
             reiniciarTest();
         } else {
-            // Cerrar la aplicación
             System.exit(0);
         }
     }
 
     private NodoArbol2 construirArbol() {
-        NodoArbol2 raiz = new NodoArbol2("¿Te gusta jugar videojuegos?");
-        raiz.si = new NodoArbol2("¿Prefieres juegos de acción?");
+        NodoArbol2 raiz = new NodoArbol2("¿Prefieres juegos de acción?");
+        raiz.si = new NodoArbol2("¿Te interesan los juegos de disparos?");
         raiz.no = new NodoArbol2("¿Te gustan los juegos de estrategia?");
         raiz.si.si = new NodoArbol2("¿Te interesan los juegos de disparos?");
         raiz.si.no = new NodoArbol2("¿Prefieres juegos de aventuras?");
@@ -172,7 +174,7 @@ public class RecomendadorJuegos2 extends JFrame {
         raiz.no.si.si = new NodoArbol2("Final Fantasy");
         raiz.no.si.no = new NodoArbol2("World of Warcraft");
         raiz.no.no.si = new NodoArbol2("The Sims");
-        raiz.no.no.no = new NodoArbol2("Stardew Valley");
+        raiz.no.no.no = new NodoArbol2("Stardew Valley");        
         raiz.si.no.si.si = new NodoArbol2("¿Te gustan los juegos de mundo abierto?");
         raiz.si.no.si.no = new NodoArbol2("¿Prefieres juegos de ciencia ficción?");
         raiz.si.no.no = new NodoArbol2("¿Te interesan los juegos de puzzles?");
@@ -193,29 +195,9 @@ public class RecomendadorJuegos2 extends JFrame {
         raiz.no.si.no.si.no.si = new NodoArbol2("¿Prefieres juegos de construcción con temática histórica?");
         raiz.no.si.no.no.si = new NodoArbol2("¿Te interesan los juegos de estrategia por turnos más complejos?");
         raiz.no.si.no.no.no = new NodoArbol2("¿Prefieres juegos de construcción con enfoque en la creatividad libre?");
-
-        //Siendo excentricos 
-        raiz.si.no.si.si.si = new NodoArbol2("Battlefield");
-        raiz.si.no.si.no.si = new NodoArbol2("Uncharted");
-        raiz.si.no.no.no.no = new NodoArbol2("Farming Simulator");
-        raiz.no.si.no.si.no.no = new NodoArbol2("Anno 2205");
-        raiz.no.si.no.no.si.no.no = new NodoArbol2("Age of Mythology");
-        raiz.no.si.no.no.no.si.no = new NodoArbol2("Factorio");
-        raiz.no.si.no.no.no.no.si = new NodoArbol2("Minecraft: Dungeons");
-        raiz.no.si.no.no.no.no.no = new NodoArbol2("Cities: Skylines - Green Cities");
-        raiz.si.no.no.si.si.no.si = new NodoArbol2("Limbo");
-        raiz.si.no.no.si.no.si.no = new NodoArbol2("Inside");
-        raiz.si.no.no.no.si.si.no = new NodoArbol2("The Witness");
-        raiz.si.no.no.no.no.no.si = new NodoArbol2("Subnautica");
-        raiz.si.no.no.no.no.no.no = new NodoArbol2("Factorio");
-        raiz.no.si.no.no.si.si.si = new NodoArbol2("StarCraft II");
-        raiz.no.si.no.no.si.si.no = new NodoArbol2("Age of Empires II: Definitive Edition");
-        raiz.no.si.no.no.no.si.si = new NodoArbol2("Europa Universalis IV");
-        raiz.no.si.no.no.no.si.no = new NodoArbol2("Stellaris");
-        raiz.no.si.no.no.no.no.si = new NodoArbol2("The Sims 4");
-        raiz.no.si.no.no.no.no.no = new NodoArbol2("Stardew Valley");
         
         return raiz;
+
     }
 
     public static void main(String[] args) {
