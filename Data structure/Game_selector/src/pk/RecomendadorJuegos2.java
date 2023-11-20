@@ -174,27 +174,11 @@ public class RecomendadorJuegos2 extends JFrame {
         raiz.no.si.si = new NodoArbol2("Final Fantasy");
         raiz.no.si.no = new NodoArbol2("World of Warcraft");
         raiz.no.no.si = new NodoArbol2("The Sims");
-        raiz.no.no.no = new NodoArbol2("Stardew Valley");        
-        raiz.si.no.si.si = new NodoArbol2("¿Te gustan los juegos de mundo abierto?");
-        raiz.si.no.si.no = new NodoArbol2("¿Prefieres juegos de ciencia ficción?");
-        raiz.si.no.no = new NodoArbol2("¿Te interesan los juegos de puzzles?");
-        raiz.si.no.no.si = new NodoArbol2("Portal");
-        raiz.si.no.no.no = new NodoArbol2("Tetris");
-        raiz.no.si.no = new NodoArbol2("¿Te interesan los juegos de gestión?");
-        raiz.no.si.no.si = new NodoArbol2("¿Prefieres juegos de construcción?");
-        raiz.no.si.no.no = new NodoArbol2("¿Te gustan los juegos de estrategia por turnos?");
-        raiz.no.si.no.si.si = new NodoArbol2("SimCity");
-        raiz.no.si.no.si.no = new NodoArbol2("Minecraft");
-        raiz.no.si.no.no.si = new NodoArbol2("Civilization");
-        raiz.si.no.si.si.no = new NodoArbol2("¿Te gustan los juegos de mundo abierto con elementos de ciencia ficción?");
-        raiz.si.no.si.no.si = new NodoArbol2("¿Prefieres juegos de aventuras con elementos de fantasía?");
-        raiz.si.no.si.no.no = new NodoArbol2("¿Te interesan los juegos que requieren estrategia táctica?");
-        raiz.si.no.no.si.si = new NodoArbol2("¿Te gustan los juegos de aventuras gráficas?");
-        raiz.si.no.no.si.no = new NodoArbol2("¿Prefieres juegos de rompecabezas más desafiantes?");
-        raiz.no.si.no.si.si.no = new NodoArbol2("¿Te gustan los juegos de construcción con enfoque en la gestión económica?");
-        raiz.no.si.no.si.no.si = new NodoArbol2("¿Prefieres juegos de construcción con temática histórica?");
-        raiz.no.si.no.no.si = new NodoArbol2("¿Te interesan los juegos de estrategia por turnos más complejos?");
-        raiz.no.si.no.no.no = new NodoArbol2("¿Prefieres juegos de construcción con enfoque en la creatividad libre?");
+        raiz.no.no.no = new NodoArbol2("¿Te gustan los juegos de mundo abierto?");
+        raiz.no.no.no.si = new NodoArbol2("Minecraft");
+        raiz.no.no.no.no = new NodoArbol2("¿Prefieres juegos de ciencia ficción?");
+        raiz.no.no.no.no.si = new NodoArbol2("Starfield");
+        raiz.no.no.no.no.no = new NodoArbol2("No tengo juegos para recomendare con las respuestas que me has dado.");
         
         return raiz;
 
