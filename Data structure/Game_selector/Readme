@@ -1,0 +1,26 @@
+Descripción del Proyecto:
+
+Este proyecto es un recomendador de juegos implementado en Java con interfaz gráfica usando Swing. 
+El programa utiliza un árbol de decisiones para hacer recomendaciones de juegos basándose en respuestas de sí o no a una serie de preguntas.
+
+Requisitos para la Instalación y Ejecución del Código:
+
+Java Development Kit (JDK) instalado en tu sistema.
+Un entorno de desarrollo integrado (IDE) como Eclipse, IntelliJ, o similar.
+Instrucciones de Instalación y Ejecución:
+
+Descarga el código fuente y guárdalo en tu sistema.
+Abre tu entorno de desarrollo integrado (IDE) y carga el proyecto.
+Asegúrate de tener configurado el JDK en tu entorno de desarrollo.
+Compila y ejecuta el programa.
+Descripción de Funcionalidades:
+
+El programa presenta una interfaz gráfica que guía al usuario a través de una serie de preguntas de sí o no.
+Basándose en las respuestas del usuario, el programa navega por un árbol de decisiones para llegar a una recomendación final de juego.
+El árbol de decisiones está predefinido en el método construirArbol().
+La recomendación final se muestra en un cuadro de mensaje.
+Después de la recomendación, el programa pregunta al usuario si desea volver a realizar el test o salir.
+Si el usuario decide volver a realizar el test, el árbol se reinicia y comienza de nuevo.
+La interfaz también incluye un saludo inicial al usuario preguntando si desea comenzar el test.
+Nota: Asegúrate de tener las imágenes referenciadas en el código (game.png) en la ubicación correcta o ajusta las rutas de las imágenes según sea necesario. Además, 
+considera manejar las rutas de archivos de manera más robusta para entornos más generales.
