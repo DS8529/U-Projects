@@ -163,7 +163,7 @@ public class RecomendadorJuegos2 extends JFrame {
         NodoArbol2 raiz = new NodoArbol2("¿Prefieres juegos de acción?");
         raiz.si = new NodoArbol2("¿Te interesan los juegos de disparos?");
         raiz.no = new NodoArbol2("¿Te gustan los juegos de estrategia?");
-        raiz.si.si = new NodoArbol2("¿Te interesan los juegos de disparos?");
+        raiz.si.si = new NodoArbol2("Te interesan los juegos de guerra");
         raiz.si.no = new NodoArbol2("¿Prefieres juegos de aventuras?");
         raiz.no.si = new NodoArbol2("¿Te gustan los juegos de rol?");
         raiz.no.no = new NodoArbol2("¿Te interesan los juegos de simulación?");
@@ -178,7 +178,7 @@ public class RecomendadorJuegos2 extends JFrame {
         raiz.no.no.no.si = new NodoArbol2("Minecraft");
         raiz.no.no.no.no = new NodoArbol2("¿Prefieres juegos de ciencia ficción?");
         raiz.no.no.no.no.si = new NodoArbol2("Starfield");
-        raiz.no.no.no.no.no = new NodoArbol2("No tengo juegos para recomendare con las respuestas que me has dado.");
+        raiz.no.no.no.no.no = new NodoArbol2("No tengo juegos para recomendar con las respuestas que me has dado.");
         
         return raiz;
 
